@@ -168,7 +168,7 @@ main .header-title mark{
     width: 18px;
   }
 
-  /* Menu de navegação */
+  /* Menu de navegação mobile */
   nav{
     display: flex;
     justify-content: space-around;
