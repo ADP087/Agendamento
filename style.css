@@ -188,7 +188,7 @@ main .header-title mark{
     left: 0px;
     z-index: 1;
     animation: showMenu 0.75s ease-in-out;
-
+    overflow-y: hidden;
   }
 
   nav .menu li{
@@ -207,24 +207,33 @@ main .header-title mark{
     display: block;
   }
 
+  .menu.hidden{
+    animation: hideMenu 0.75s ease-in-out;
+  }
+
+  .menu.hidden{
+    display: none;
+  }
+  
+  .menu.visible{
+    display: flex;
+    animation: showMenu 0.75s ease-in-out;
+  }
+
   @keyframes showMenu{
     from{
-      opacity: 0;
       height: 0px;
     }
     to{
-      opacity: 1;
       height: 100dvh;
     }
   }
 
   @keyframes hideMenu{
     from{
-      opacity: 1;
       height: 100dvh;
     }
     to{
-      opacity: 0;
       height: 0px;
     }
   }
