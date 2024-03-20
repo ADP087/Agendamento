@@ -1,12 +1,12 @@
-const menuHamb = document.getElementById("menu-button");
-const menu = document.getElementById("menu");
+const menuIcon = document.querySelector('#menuIcon');
+const menu = document.querySelector('.menu');
 
-menuHamb.addEventListener("click", () => {
-    if (menu.style.display === "none") {
-        menu.style.display = "flex";
-    }
-    else {
-        menu.style.display = "none";
-    }
-});
-
+menuIcon.addEventListener('click', () => {
+  if(menu.style.display === "flex"){
+    menu.setAttribute('style', 'display: none; animation: hideMenu 0.75s ease-in-out;');
+    menuIcon.innerHTML = "menu"
+  } else {
+    menu.setAttribute('style', 'display: flex; animaion: showMenu 0.75s ease-in-out;');
+    menuIcon.innerHTML = "close"
+  }
+})
