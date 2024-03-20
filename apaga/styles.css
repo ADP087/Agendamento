@@ -1,0 +1,27 @@
+.content-filtro {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden; /* Oculta o conteúdo fora da div */
+  }
+  
+  .date-container {
+    overflow-x: auto; /* Permite rolagem horizontal */
+    scrollbar-width: none; /* Oculta a barra de rolagem padrão do navegador */
+    -ms-overflow-style: none; /* Oculta a barra de rolagem no IE e no Edge */
+  }
+  
+  .date {
+    padding: 20px;
+    margin: 0 20px;
+    background-color: #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 22pt;
+  }
+  
+  .date:hover {
+    background-color: #999;
+  }
