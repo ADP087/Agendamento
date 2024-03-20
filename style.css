@@ -2,6 +2,7 @@
 :root{
   --color-black: #092335;
   --color-dark-black: #051423;
+  --color-light-black: #123245;;
   --color-white: #fff;
 }
 
@@ -53,6 +54,7 @@ header{
 nav {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     background-color: var(--color-black);
     height: 9vh;
     width: 100%;
@@ -76,6 +78,14 @@ nav .menu li{
 
 nav .menu li:hover{
     background-color: var(--color-dark-black);
+}
+
+nav .menuIcon{
+  display: none;
+  background-color: var(--color-light-black);
+  color: var(--color-white);
+  border-radius: 8px;
+  padding: 10px;
 }
 
 /*Barra de pesquisa*/
@@ -129,8 +139,10 @@ main{
 }
 
 main .main-header{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     width: 100%;
     padding: 45px 50px;
 }
@@ -138,5 +150,60 @@ main .main-header{
 main .main-header img{
   transform: rotateY(180deg);
   width: 450px;
+}
+
+main .header-title mark{
+  border-radius: 2px;
+}
+
+/* Responsividade mobile */
+@media (max-width: 768px){
+  
+  /* Cabeçalho */
+  header .logo{
+    width: 90px;
+  }
+
+  header .social-media img{
+    width: 18px;
+  }
+
+  /* Menu de navegação */
+  nav{
+    display: flex;
+    justify-content: space-around;
+    gap: 100px;
+  }
+  
+  nav .menu{
+    display: none;
+  }
+  
+  nav .search-container{
+    width: 50%;
+  }
+  
+  nav .menuIcon{
+    display: block;
+  }
+
+  /* Conteúdo principal */
+  main .main-header{
+    padding: 0px;
+  }
+  
+  main .main-header img{
+    margin-top: -50px;
+    width: 300px;
+  }
+  
+  main .main-header-title{
+    font-size: 40px;
+  }
+  
+  main .main-header-text{
+    margin: 15px;
+  }
+
 }
 
