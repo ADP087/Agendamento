@@ -156,6 +156,24 @@ main .header-title mark{
   border-radius: 5px;
 }
 
+main .start-button{
+    height: fit-content;
+    padding: 15px 40px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.main .start-button:hover{
+    background-color: transparent;
+    border: solid 2px var(--color-black);
+    color: var(--color-black);
+    transition: all 0.75s ease-in-out;
+}
+
 /* Responsividade mobile */
 @media (max-width: 768px){
   
@@ -239,22 +257,24 @@ main .header-title mark{
   }
 
   /* Conteúdo principal */
+  main{
+    padding: 15px;
+  }
+  
   main .main-header{
-    padding: 0px;
+    justify-content: flex-start;
   }
   
   main .main-header img{
-    margin-top: -30px;
+    margin-top: 10px;
     width: 300px;
   }
   
   main .main-header-title{
     font-size: 40px;
   }
-  
-  main .main-header-text{
-    margin: 15px;
-  }
+
+
 
 }
 
