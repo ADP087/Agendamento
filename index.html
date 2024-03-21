@@ -7,76 +7,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/1695400216631.png">
-    <title>Protótipo</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Acessa JEM</title>
 </head>
 <body>
+
+    <!-- Cabeçalho -->
     <header>
-        <nav>
-            <div class="logo">
-                <img src="assets/logo-etec.png" alt="logo" width="210px" height="65px">
-                <h1>Agende.educ</h1>
-            </div>
-            <div id="menu-button">
-                <img src="/assets/menu-aberto.png" alt="menu_hamburguer" class="menuhamburguer">
-            </div>
-            <ul class="menu" id="menu">
-                <li>Agenda</li>
-                <a href="about.html"><li>Sobre</li></a>
-                <li>Contato</li>
-            </ul>
-        </nav>
+      <img src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/48/2024/03/etec_sao_paulo.png" alt="logo" class="logo" width="250px"/>
+        <div class="social-media">
+        <img src="./assets/social-media.png" width="25px" alt="twitterIcon">
+        <img src="./assets/youtube.png" width="25px" alt="youtubeIcon">
+        <img src="./assets/facebook.png" width="25px" alt="facebookIcon">
+          /governosp
+      </div>
     </header>
+  
+    <!-- Menu de navegação -->
+    <nav>
+      <i class="material-icons menuIcon" id="menuIcon">menu</i>
+      <ul class="menu">
+        <li>
+          <a href="#inicio">Início</a>
+        </li>
+        <li>
+          <a href="#sobre">Sobre</a>
+        </li>
+        <li>
+          <a href="#contato">Contato</a>
+        </li>
+      </ul>
+      <div class="search-container">
+        <input type="text" class="search" placeholder="Pesquisar...">
+        <button class="search-btn">
+          <i class="material-icons">search</i>
+        </button>
+      </div>
+    </nav>
+  
+    <!-- Conteúdo principal -->
     <main>
-        <section class="starter">
-            <img src="/assets/computador-de-mesa.png" alt="Pessoa no computador">
-            <h1 class="title">Agendamento <mark>Descomplicado</mark></h1>
-            <p>Comece a usar o <strong>Agende.educ</strong> para reservar a sala de informática. Clique abaixo para começar a fazer suas reservas de maneira <strong>simples e prática</strong>, ajudando a manter <strong>nossa escola</strong> organizada.</p>
-            <button id="start">COMEÇAR</button>
-        </section>
-        <div class="infodescription">
-            <section class="info">
-                    <img src="assets/agendamento.png" alt="Logo agendamento">
-                    <article>
-                        <h2>Agendar Sala</h2>
-                        <p>Os professores podem reservar salas de informática para realizar aulas, estudos individuais ou projetos escolares, garantindo que tenham acesso aos recursos de que precisam quando precisam.</p>
-                    </article>
-                    <article>
-                        <h2>Monitorar disponibilidade</h2>
-                        <p>Professores podem verificar facilmente a disponibilidade da sala e escolher horários adequados para suas atividades.</p>
-                    </article>
-                    <article>
-                        <h2>Relatórios de Uso</h2>
-                        <p>A equipe administrativa pode acessar relatórios detalhados sobre o uso da sala, permitindo uma melhor alocação de recursos e planejamento de longo prazo.</p>
-                    </article>
-            </section>
-            <section class="infologo">
-                <img src="/assets/agendamento.png" alt="ícone agenda">
-            </section>
-        </div>
+      <section class="main-header">
+        <img src="./assets/computador-de-mesa.png">
+        <article class="main-header-text">
+          <h1 class="main-header-title">Agendamento <mark>Descomplicado</mark></h1>
+          <p class="main-header-description">Comece a usar o Agende.educ para reservar a sala de informática. Clique abaixo para começar a fazer suas reservas de maneira simples e prática, ajudando a manter nossa escola organizada.</p>
+        </article>
+        <button class="start-button">Começar</button>
+      </section>
     </main>
     <footer>
-        <section class="Description">
-            <ul>
-                <li>
-                    <strong>Inicio</strong>
-                    <p>Home</p>
-                    <p>Agendamentos</p>
-                    <p>GitHub</p>
-                </li>
-                <li>
-                    <strong>Sobre nós</strong>
-                    <p>Informações da Escola</p>
-                    <p>Contato</p>
-                    <p>Blog</p>
-                </li>
-                <li>
-                    <strong>Suporte</strong>
-                    <p>FAQ</p>
-                    <p>Telefones</p>
-                    <p>Chat</p>
-                </li>
-            </ul>
-        </section>
+        
     </footer>
     <script src="script.js"></script>
 </body>
