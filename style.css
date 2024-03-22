@@ -11,10 +11,11 @@
     margin: 0px;
     padding: 0px;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
-  transition: all 0.3s ease-in-out;
 }
 
 body {
+    width: 100dvw;
+    height: 100%;
     color: var(--color-black);
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -32,7 +33,7 @@ header{
     align-items: center;
     justify-content: space-around;
     height: fit-content;
-    width: 100%;
+    width: 100dvw;
     gap: 50px;
     padding: 10px;
     color: var(--color-black);
@@ -62,8 +63,10 @@ nav {
 
 nav .menu{
     display: flex;
+    visibility: visible;
     align-items: center;
     width: 50%;
+    height: 100%;
     list-style: none;
 }
 
@@ -134,8 +137,8 @@ main{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
 }
 
 main .main-header{
@@ -143,8 +146,9 @@ main .main-header{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 100%;
-    padding: 45px 50px;
+    width: fit-content;
+    height: 100%;
+    gap: 50px;
 }
 
 main .main-header img{
@@ -152,8 +156,25 @@ main .main-header img{
   width: 450px;
 }
 
+main .main-header-text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+}
+
+main .main-header-title{
+    font-size: 4.5rem;
+    font-weight: bold;
+}
+
 main .header-title mark{
   border-radius: 5px;
+}
+
+main .main-header-description{
+    font-size: 1.5rem;
+    font-weight: semibold;
 }
 
 main .start-button{
@@ -162,12 +183,12 @@ main .start-button{
     background-color: var(--color-black);
     color: var(--color-white);
     border-radius: 60px;
-    border: none;
+    border: solid 2px var(--color-black);
     cursor: pointer;
-    margin-top: 10px;
+    transition: all 0.75s ease-in-out;
 }
 
-.main .start-button:hover{
+.start-button:hover{
     background-color: transparent;
     border: solid 2px var(--color-black);
     color: var(--color-black);
@@ -194,19 +215,17 @@ main .start-button{
   }
   
   nav .menu{
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 100dvw;
-    height: 100dvh;
-    background-color: var(--color-black);
+    visibility: hidden;
     position: absolute;
-    top: 95px;
-    left: 0px;
-    z-index: 1;
-    animation: showMenu 0.75s ease-in-out;
+    width: 100dvw;
+    top: 15dvh;
+    height: 0dvh;
+    background-color: var( --color-black);
+    flex-direction: column;
+    align-items: center;
     overflow-y: hidden;
+    z-index: 10;
+    transition: all 1s ease-in-out;
   }
 
   nav .menu li{
@@ -217,52 +236,31 @@ main .start-button{
     border-bottom: solid 1px var(--color-white);
   }
   
+  nav .menuIcon{
+    display: flex;
+    cursor: pointer;
+  }
+
+  .menu.active{
+    visibility: visible;
+    height: 92dvh;
+    width: 100dvw;
+    transition: all 1s ease-in-out;
+  }
+  
+  /* Barra de pesquisa */
   nav .search-container{
     width: 50%;
   }
-  
-  nav .menuIcon{
-    display: block;
-  }
 
-  .menu.hidden{
-    animation: hideMenu 0.75s ease-in-out;
-  }
-
-  .menu.hidden{
-    display: none;
-  }
-  
-  .menu.visible{
-    display: flex;
-    animation: showMenu 0.75s ease-in-out;
-  }
-
-  @keyframes showMenu{
-    from{
-      height: 0px;
-    }
-    to{
-      height: 100dvh;
-    }
-  }
-
-  @keyframes hideMenu{
-    from{
-      height: 100dvh;
-    }
-    to{
-      height: 0px;
-    }
-  }
-
-  /* Conteúdo principal */
+  /* Conteúdo principal mobile */
   main{
-    padding: 15px;
   }
   
   main .main-header{
-    justify-content: flex-start;
+    align-content: center;
+    justify-content: center;
+    gap: 0px;
   }
   
   main .main-header img{
@@ -271,8 +269,14 @@ main .start-button{
   }
   
   main .main-header-title{
-    font-size: 40px;
+    font-size: 2.5rem;
   }
+
+  main .main-header-description{
+    font-size: 1.2rem;
+  }
+
+  
 
 
 
