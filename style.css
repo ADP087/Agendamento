@@ -11,6 +11,7 @@
     margin: 0px;
     padding: 0px;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 body {
@@ -90,6 +91,7 @@ nav .menuIcon{
   color: var(--color-white);
   border-radius: 8px;
   padding: 10px;
+  transition: 0.5s ease-in-out;
 }
 
 /*Barra de pesquisa*/
@@ -134,48 +136,48 @@ nav .search-btn i{
 
 /*Conteúdo principal*/
 main{
-    display: flex;
-    flex-direction: column;
-    width: 100dvw;
-    height: 1500px;
+  display: flex;
+  justify-content: center;
+  width: 100dvw;
+  heigth: fit-content;
+  border: solid 5px gray;
+  padding: 10px;
 }
 
-main .main-header{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    padding: 30px;
-    height: fit-content;
+.main-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
-main .main-img{
+.main-header-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: fit-content;
+}
+
+.main-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transform: rotateY(180deg);
-  width: 450px;
 }
 
-main .main-header-text{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 50%;
+.main-img img{
+  width: 70%;
 }
 
-main .main-header-title{
-    font-size: 4.5rem;
-    font-weight: bold;
+.main-header-title{
+  font-size: 3rem;
 }
 
-main .header-title mark{
-  border-radius: 5px;
-}
-
-main .main-header-description{
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
-    font-size: 1.5rem;
-    font-weight: semibold;
+.main-header-description{
+  font-size: 1.5rem;
 }
 
 main .start-button{
@@ -197,33 +199,9 @@ main .start-button{
     transition: all 0.75s ease-in-out;
 }
 
+
+
 /* Responsividade mobile */
-@media (max-width: 1100px){
-  main .main-img{
-    width: fit-content;
-    height: fit-content;
-  }
-  
-  main .main-img img{
-    width: 320px;
-  }
-  
-  main .main-header{
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-  }
-  
-  main .main-header-title{
-    font-size: 3.8rem;
-  }
-
-  main .main-header-description{
-    font-size: 1.2rem;
-  }
-}
-
 
 @media (max-width: 768px){
   
@@ -268,6 +246,7 @@ main .start-button{
   nav .menuIcon{
     display: flex;
     cursor: pointer;
+    transition: 0.5s ease-in-out;
   }
 
   .menu.active{
@@ -285,30 +264,15 @@ main .start-button{
   /* Conteúdo principal mobile */
   main{
     padding: 0px;
-    width: fit-content;
   }
   
-  main .main-header{
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-    padding-left: 10px;
-    gap: 0px;
-  }
-  
-  main .main-header img{
-    margin-top: 10px;
-    width: 300px;
-  }
-  
-  main .main-header-title{
-    font-size: 2.5rem;
+  .main-header-text{
+    width: 100%;
   }
 
-  main .main-header-description{
-    display: none;
-  }
+  .main-img img{
+    
+  
 
   
 

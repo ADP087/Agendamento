@@ -18,8 +18,10 @@ class mobileNavBar {
   handleResize(){
     if(this.menu.classList.contains(this.activeClass)){
       document.body.style.overflowY = "hidden";
+      menuIcon.innerHTML = "close";
     } else {
       document.body.style.overflowY = "auto";
+      menuIcon.innerHTML = "menu";
     }
   }
 
