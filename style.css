@@ -61,9 +61,11 @@ nav {
 }
 
 nav .menu{
+    font-size: 20px; /*Mudei aqui*/
     display: flex;
     align-items: center;
     width: 50%;
+    height: 100px; /*Aqui*/
     list-style: none;
 }
 
@@ -132,7 +134,7 @@ nav .search-btn i{
 main{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    /*justify-content: space-around;*/ /*eu tirei essa parte pq tava criando um espaço grande do nav para o main*/
     align-items: center;
     width: 100%;
     height: 100vh;
