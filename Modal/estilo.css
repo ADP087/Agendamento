@@ -1,0 +1,59 @@
+body {
+    background-color: #17567F;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+header {
+    color: white;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    font-size: 20px;
+}
+
+section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px black;
+    text-align: center;
+    transition: 1s;
+}
+
+#botao_02 {
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+button {
+    width: 250px;
+    height: 70px;
+    border-radius: 180px;
+    margin-top: 40px;
+    margin-left: px;
+    border: solid;
+    border-width: 1px;
+    border-color: #17567F;
+    background-color: #17567F;
+    transition: 500ms;
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+    font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: transparent;
+    color: #17567F;
+    transition: 500ms ease-in-out;
+}
+
+#start:active {
+    background-color: #17567F;
+    color: white;
+    transition: 0s ease-in-out;
+}
