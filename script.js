@@ -1,13 +1,40 @@
-const menuIcon = document.querySelector('#menuIcon');
-const menu = document.querySelector('.menu');
-
-menuIcon.addEventListener('click', () => { if(menu.style.display === "flex"){
-    menu.setAttribute('style', 'display: none; animation: hideMenu 0.75s ease-in-out !important;')
-    menuIcon.innerHTML = "menu";
-  document.body.style.overflow = "auto";
-  } else {
-    menu.setAttribute('style', 'display: flex;')
-    menuIcon.innerHTML = "close";
-    document.body.style.overflow = "hidden";
+class mobileNavBar {
+  constructor(menu, menuIcon){
+    this.menu = document.querySelector(menu);
+    this.menuIcon = document.querySelector(menuIcon);
+    this.activeClass = "active";
+    this.handleClick = this.handleClick.bind(this);
   }
-})
+
+  addClickEvent(){
+    this.menuIcon.addEventListener('click', this.handleClick)
+  }
+
+  handleClick(){
+    this.menu.classList.toggle(this.activeClass);
+    this.handleResize()
+  }
+
+  handleResize(){
+    if(this.menu.classList.contains(this.activeClass)){
+      document.body.style.overflowY = "hidden";
+      menuIcon.innerHTML = "close";
+    } else {
+      document.body.style.overflowY = "auto";
+      menuIcon.innerHTML = "menu";
+    }
+  }
+
+  init(){
+    if(this.menu){
+      this.addClickEvent();
+    }
+  }
+}
+
+const mobileNav = new mobileNavBar(
+  ".menu",
+  ".menuIcon"
+);
+
+mobileNav.init()
