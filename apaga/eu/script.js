@@ -1,19 +1,18 @@
-var tabela = document.getElementById("minha_tabela")
-var celulas = document.getElementsByTagName("td")
-
-function TabelaInterativa() {
-    for(var i = 0; i < celulas.length; i++) {
-        var celula_clicada = celulas[i];
-
-        celula_clicada.onclick = function() {
-            if(this.style.backgroundColor === "red") {
-                this.style.backgroundColor = "";
-            }
-            else {
-                this.style.backgroundColor = "red";
-            }
-        }
+function marcarHorario(checkbox) {
+    var td = checkbox.parentNode;
+    if (checkbox.checked) {
+        td.classList.add('selected');
+    } 
+    else {
+        td.classList.remove('selected');
     }
 }
 
-TabelaInterativa();
+function mostrarHorariosSelecionados() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    var horariosSelecionados = document.getElementById('horariosSelecionados');
+    horariosSelecionados.innerHTML = "<h2>Horários Selecionados:</h2>";
+    checkboxes.forEach(function(checkbox) {
+        horariosSelecionados.innerHTML += checkbox.value + "<br>";
+    });
+}
