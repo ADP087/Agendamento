@@ -1,0 +1,58 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+td.selected {
+    background-color: red;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+header {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+#tabela {
+    padding-left: 25%;
+    width: 50%;
+    text-align: center;
+}
+
+.content-filtro {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden; /* Oculta o conteúdo fora da div */
+  }
+  
+  .date-container {
+    display: flex;
+    overflow-x: auto; /* Permite rolagem horizontal */
+    scrollbar-width: none; /* Oculta a barra de rolagem padrão do navegador */
+    -ms-overflow-style: none; /* Oculta a barra de rolagem no IE e no Edge */
+  }
+  
+  .date {
+    padding: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .date:hover {
+    background-color: #999;
+  }
