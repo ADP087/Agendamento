@@ -1,0 +1,15 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+th,td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+
+td.selected {
+    background-color: red;
+}

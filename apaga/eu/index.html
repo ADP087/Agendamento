@@ -7,8 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-    <header></header>
-    <section></section>
+    <header>
+        <h1>Escolha o horário</h1>
+    </header>
+    <section>
+        <div id="tabela">
+            <table>
+                <tr>
+                    <td><input type="checkbox" value="8:00" onclick="marcaHorario(this)">8:00</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="8:45" onclick="marcaHorario(this)">8:45</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="9:30" onclick="marcaHorario(this)">9:30</td>
+                </tr>
+            </table>
+            <br>
+
+            <input type="submit" value="Confirmar" onclick="mostrarHorario()">
+
+            <div id="horarioSelecionado"></div>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
