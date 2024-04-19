@@ -8,3 +8,10 @@ function marcaHorario(checkbox) {
         td.classList.remove('selected');
     }
 }
+
+function mostrarHorario() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    var horarioSelecionado = document.getElementById('horarioSelecionado');
+
+    horarioSelecionado.innerHTML = "<h2>Você selecionou o horário para:</h2>";
+}

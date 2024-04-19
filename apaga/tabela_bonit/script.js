@@ -13,7 +13,7 @@ function mostrarHorariosSelecionados() {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
     var horariosSelecionados = document.getElementById('horariosSelecionados');
 
-    horariosSelecionados.innerHTML = "<h2>Horários Selecionados para " + dataSelecionada + ":</h2>";
+    horariosSelecionados.innerHTML = "<h2>Horários Selecionados para:</h2>";
     checkboxes.forEach(function(checkbox) {
         horariosSelecionados.innerHTML += checkbox.value + "<br>";
     });
