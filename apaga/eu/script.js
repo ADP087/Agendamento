@@ -11,7 +11,10 @@ function marcaHorario(checkbox) {
 
 function mostrarHorario() {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-    var horarioSelecionado = document.getElementById('horarioSelecionado');
+    var HorarioSelecionado = document.getElementById('horarioSelecionado');
 
-    horarioSelecionado.innerHTML = "<h2>Você selecionou o horário para:</h2>";
+    HorarioSelecionado.innerHTML = "<h2>Você selecionou o horário para:</h2>";
+    checkboxes.forEach(function(checkbox) { //é uma maneira conveniente de percorrer todos os elementos de uma lista 
+        HorarioSelecionado.innerHTML += checkbox.value + "<br>";
+    });
 }
