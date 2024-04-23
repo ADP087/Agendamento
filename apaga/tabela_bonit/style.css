@@ -23,6 +23,10 @@ header {
     padding-bottom: 30px;
 }
 
+section {
+  padding-top: 30px;
+}
+
 #tabela {
     padding-left: 25%;
     width: 50%;
