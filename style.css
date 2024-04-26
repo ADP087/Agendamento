@@ -247,9 +247,24 @@ main .start-button{
 
 /* Rodapé */
 footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--color-white);
   width: 100%;
   height: 15dvh;
+}
+
+.footer-description ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+  list-style-type: none;
+}
+
+.footer-description ul li {
+  cursor: pointer;
 }
 
 /* Responsividade mobile */
