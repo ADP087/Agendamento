@@ -209,7 +209,6 @@ main .start-button{
 .main-details{
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   width: 100%;
 }
 
@@ -218,7 +217,8 @@ main .start-button{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 10px;
+  padding: 25px;
+  width: 100%;
   background-color: var(--color-black);
   color: var(--color-white);
   flex-grow: 1;
@@ -239,8 +239,32 @@ main .start-button{
 
 .info-article{
   background-color: var(--color-light-black);
+  width: 100%;
+  min-height: 95px;
   padding: 25px;
   border-radius: 10px;
+}
+
+/* Rodapé */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 15dvh;
+}
+
+.footer-description ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+  list-style-type: none;
+}
+
+.footer-description ul li {
+  cursor: pointer;
 }
 
 /* Responsividade mobile */
@@ -324,6 +348,8 @@ main .start-button{
   }
 
   /* Seção de informações de agendamento mobile */
-
+  .main-details {
+    flex-wrap: wrap;
+  }
 
 }
