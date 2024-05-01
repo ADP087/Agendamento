@@ -7,12 +7,13 @@
     <title>Gerenciando Tabela</title>
 </head>
 <body>
-    <header class="content-filtro">
+    <header>
         <h1>Escolha o dia e o horário que deseja agendar:</h1>
         <div class="dates">
             <span class="date" data-date="09/04">09/04</span>
             <span class="date" data-date="10/04">10/04</span>
             <span class="date" data-date="11/04">11/04</span>
+            <!-- Adicione mais datas conforme necessário -->
         </div>
     </header>
 
@@ -20,35 +21,22 @@
         <div id="tabela">
             <table id="minha_tabela">
                 <tr>
-                    <td><input type="checkbox" value="8:00" onclick="marcarHorario(this)"> 8:00</td>
+                    <td><input type="checkbox" value="08:00" onclick="marcarHorario(this)"> 8:00</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" value="8:45" onclick="marcarHorario(this)"> 8:45</td>
+                    <td><input type="checkbox" value="08:45" onclick="marcarHorario(this)"> 8:45</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" value="9:30" onclick="marcarHorario(this)"> 9:30</td>
+                    <td><input type="checkbox" value="09:30" onclick="marcarHorario(this)"> 9:30</td>
                 </tr>
-                <tr>
-                    <td><input type="checkbox" value="10:15" onclick="marcarHorario(this)"> 10:15</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" value="11:00" onclick="marcarHorario(this)"> 11:00</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" value="11:45" onclick="marcarHorario(this)"> 11:45</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" value="12:30" onclick="marcarHorario(this)"> 12:30</td>
-                </tr>
+                <!-- Adicione mais linhas conforme necessário para outros horários -->
             </table>
             <br>
-            
             <input type="submit" value="Confirmar" onclick="mostrarHorariosSelecionados()">
-
             <div id="horariosSelecionados"></div>
         </div>
-
     </section>
+
     <script src="script.js"></script>
 </body>
 </html>

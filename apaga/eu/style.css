@@ -5,14 +5,31 @@ body {
 }
 
 header {
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     padding-top: 40px;
     padding-bottom: 50px;
     font-size: 20px;
+    overflow: hidden; /* Oculta o conteúdo fora da div */
+}
+
+.date {
+    padding: 20px;
+    margin: 0 20px;
+    background-color: #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 22pt;
+}
+
+.date:hover {
+    background-color: #999;
 }
 
 section {
     padding: 15px;
+    padding-top: 30px;
     width: 500px;
     margin: auto;
     text-align: center;

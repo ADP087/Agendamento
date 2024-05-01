@@ -10,10 +10,19 @@ th, td {
     text-align: left;
 }
 
-td.selected {
-    background-color: red;
-}
+        /* Estilo para o fundo vermelho quando a caixa de seleção está marcada */
+        td.selected {
+          background-color: red;
+      }
 
+      /* Estilo para a data selecionada */
+      .selected-date {
+          background-color: lightblue;
+      }
+
+      .selected-date.darker {
+        background-color: #606568; /* Aqui você pode ajustar a cor como desejar */
+    }
 th {
     background-color: #f2f2f2;
 }
