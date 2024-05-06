@@ -19,7 +19,7 @@ header {
     margin: 0 20px;
     background-color: #ccc;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: pointer; /*terá o cursor do mouse alterado para uma mão*/
     font-size: 22pt;
 }
 

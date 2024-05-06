@@ -22,6 +22,22 @@
             }
         }
 
+        function limparSelecao() {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = false;
+                var td = checkbox.parentNode;
+                td.classList.remove('selected');
+            });
+            var dates = document.querySelectorAll('.date');
+            dates.forEach(function(date) {
+                date.classList.remove('selected-date');
+                date.classList.remove('darker');
+            });
+            var horariosSelecionados = document.getElementById('horariosSelecionados');
+            horariosSelecionados.innerHTML = "";
+        }
+
         function mostrarHorariosSelecionados() {
             var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
             var dataSelecionada = document.querySelector('.selected-date');
