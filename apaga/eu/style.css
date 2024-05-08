@@ -50,3 +50,7 @@ th,td {
 td.selected {
     background-color: red;
 }
+
+#tabela_visul table td{
+    text-align: center;
+}

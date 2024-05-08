@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Escolha o dia e o horário que deseja agendar:</h1> <br>
+        <h1>Horários Agendados:</h1> <br>
         <div class="dates">
             <span class="date" data-date="25/04">25/04</span>
             <span class="date" data-date="26/04">26/04</span>
@@ -18,40 +18,36 @@
         </div>
     </header>
     <section>
-        <div id="tabela">
+        <div id="tabela_visul">
             <table>
                 <tr>
-                    <td><input type="checkbox" value="8:00" onclick="marcaHorario(this)">8:00</td>
+                    <td>8:00</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" value="8:45" onclick="marcaHorario(this)">8:45</td>
+                    <td>8:45</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" value="9:30" onclick="marcaHorario(this)">9:30</td>
+                    <td>9:30</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" value="10:15" onclick="marcaHorario(this)">10:15</td>
+                    <td>10:15</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" value="11:00" onclick="marcaHorario(this)">11:00</td>
+                    <td>11:00</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" value="11:45" onclick="marcaHorario(this)">11:45</td>
+                    <td>11:45</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" value="12:30" onclick="marcaHorario(this)">12:30</td>
+                    <td>12:30</td>
                 </tr>
             </table>
             <br>
 
-            <input type="button" value="Cancelar" onclick="limparSelecao()">
+            <input type="submit" value="Deseja marcar algum horário?" onclick="mostrarHorario()">
 
-            <input type="submit" value="Confirmar" onclick="mostrarHorario()">
-
-            <div id="horarioSelecionado"></div>
         </div>
     </section>
 
-    <script src="script.js"></script>
 </body>
 </html>
