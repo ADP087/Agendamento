@@ -47,6 +47,10 @@ th,td {
     text-align: left;
 }
 
+.intervalo {
+    text-align: center;
+}
+
 td.selected {
     background-color: red;
 }

@@ -9,6 +9,17 @@ function marcaHorario(checkbox) {
     }
 }
 
+var tds = document.querySelectorAll('#tabela td');
+tds.forEach(function(td) {
+    td.addEventListener('click', function(event) {
+        if (event.target.tagName !== 'INPUT') { // Verifica se o clique não é diretamente no checkbox
+            var checkbox = td.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+            marcaHorario(checkbox);
+        }
+    });
+});
+
 function limparSelecao() {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(function(checkbox) {
