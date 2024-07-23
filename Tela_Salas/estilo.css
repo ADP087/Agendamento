@@ -22,26 +22,24 @@ section {
     box-shadow: 3px 3px 10px black;
     text-align: center;
     transition: 1s;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os botões horizontalmente */
 }
 
-#botao_02 {
-    padding-top: 40px;
-    padding-bottom: 50px;
-}
 button {
-    width: 250px;
+    width: 200px; /* Ajuste a largura conforme necessário */
     height: 70px;
-    border-radius: 180px;
-    margin-top: 40px;
-    margin-left: px;
+    border-radius: 180px; /* Isso não forma um círculo, rever */
+    margin: 10px; /* Espaçamento entre os botões */
     border: solid;
     border-width: 1px;
     border-color: #17567F;
     background-color: #17567F;
-    transition: 500ms;
+    transition: background-color 0.5s, color 0.5s;
     color: white;
     font-size: large;
-    font-weight: bold;
+    font-weight: bold; /* Não existe "bolder" */
     font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
     cursor: pointer;
 }
