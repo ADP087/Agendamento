@@ -1,3 +1,4 @@
+//Aqui ele deixa o td (checkbox) SELECIONADO
 function marcaHorario(checkbox) {
     var td = checkbox.parentNode;
 
@@ -9,6 +10,7 @@ function marcaHorario(checkbox) {
     }
 }
 
+//Quando uma célula é clicada, o estado do checkbox dentro da célula é alternado e a função marcaHorario é chamada para atualizar o estilo da célula.
 var tds = document.querySelectorAll('#tabela td');
 tds.forEach(function(td) {
     td.addEventListener('click', function(event) {
@@ -20,6 +22,7 @@ tds.forEach(function(td) {
     });
 });
 
+//Limpa a exibição de horários selecionados.
 function limparSelecao() {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(function(checkbox) {
@@ -32,6 +35,7 @@ function limparSelecao() {
     horariosSelecionados.innerHTML = "";
 }
 
+//Esta função exibe os horários selecionados pelo usuário.
 function mostrarHorario() {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
     var HorarioSelecionado = document.getElementById('horarioSelecionado');
