@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Horários</title>
+</head>
+<body>
+    <h1>Selecione os Horários</h1>
+    <form id="horariosForm">
+        <label><input type="checkbox" name="horario" value="20h"> 20h</label><br>
+        <label><input type="checkbox" name="horario" value="21h"> 21h</label><br>
+        <label><input type="checkbox" name="horario" value="22h"> 22h</label><br>
+        <label><input type="checkbox" name="horario" value="23h"> 23h</label><br>
+
+        <button type="button" onclick="enviarHorarios()">Confirmar</button>
+        <button type="button" onclick="limparHorarios()">Limpar Tudo</button>
+    </form>
+
+    <!-- Incluindo o script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
