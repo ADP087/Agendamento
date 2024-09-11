@@ -50,3 +50,39 @@ function mostrarHorario() {
         HorarioSelecionado.innerHTML += checkbox.value + "<br>";
     });
 }
+
+
+
+//Conectando ao PHP usando FETCH
+function enviarHorario(horario) {
+    fetch('process.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ horario: horario })
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+    });
+}
+
+function mostrarHorario() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    var HorarioSelecionado = document.getElementById('horarioSelecionado');
+
+    if (checkboxes.length === 0) {
+        alert("Por favor, selecione pelo menos um horário.");
+        return;
+    }
+
+    HorarioSelecionado.innerHTML = "<h2>Você selecionou o horário para:</h2>";
+    checkboxes.forEach(function(checkbox) {
+        HorarioSelecionado.innerHTML += checkbox.value + "<br>";
+        enviarHorario(checkbox.value); // Envia o horário selecionado para o backend
+    });
+}

@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (password_verify($senha, $user['senha_usuario'])) {
             $_SESSION['usuario_id_usuario'] = $user['id_usuario'];
             $_SESSION['usuario_nome_usuario'] = $user['nome_usuario'];
-            header("Location: ../apaga/eu/pag_adm.html");
+            header("Location: ../pag_adm.html");
             exit();
         } else {
             echo "Senha incorreta.";
