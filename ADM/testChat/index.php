@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Agendamento de Horários</title>
 </head>
 <body>
     <header>
         <h1>Escolha o dia e o horário que deseja agendar:</h1> <br>
         <div class="dates">
-            <span class="date" data-date="25/04">25/04</span>
-            <span class="date" data-date="26/04">26/04</span>
-            <span class="date" data-date="27/04">27/04</span>
-            <span class="date" data-date="28/04">28/04</span>
-            <span class="date" data-date="29/04">29/04</span>
+            <?php
+            $hoje = new DateTime();
+            for ($i = 0; $i < 5; $i++) {
+                $data = $hoje->modify('+1 day')->format('d/m');
+                echo "<span class='date' data-date='$data'>$data</span>";
+            }
+            ?>
         </div>
     </header>
     <section>
@@ -37,12 +39,13 @@
                 </tr>
             </table>
             <br>
-            <input type="button" value="Cancelar" onclick="limparSelecao()">
+            <input type="button" value="Limpar" onclick="limparSelecao()">
             <input type="submit" value="Confirmar" onclick="mostrarHorario()">
             <div id="horarioSelecionado"></div>
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
+

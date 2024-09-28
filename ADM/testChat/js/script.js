@@ -13,7 +13,7 @@ function marcaHorario(checkbox) {
 }
 
 function carregarHorarios() {
-    fetch('carrega_horarios.php')
+    fetch('php/carrega_horarios.php')
     .then(response => response.json())
     .then(data => {
         for (const horario in data) {
@@ -32,7 +32,6 @@ function carregarHorarios() {
     });
 }
 
-
 function mostrarHorario() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
     const horariosSelecionados = [];
@@ -50,7 +49,7 @@ function mostrarHorario() {
 }
 
 function enviarHorario(horarios) {
-    fetch('processa.php', {
+    fetch('php/processa.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -68,7 +67,7 @@ function enviarHorario(horarios) {
 }
 
 function limparSelecao() {
-    fetch('limpar.php', {
+    fetch('php/limpar.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
