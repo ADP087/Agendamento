@@ -1,4 +1,3 @@
-
 <?php
 header('Content-Type: application/json');
 $conn = new mysqli("localhost", "root", "", "db_agendamento");
