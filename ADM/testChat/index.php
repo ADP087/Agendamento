@@ -12,9 +12,21 @@
         <div class="dates">
             <?php
             $hoje = new DateTime();
-            for ($i = 0; $i < 5; $i++) {
-                $data = $hoje->modify('+1 day')->format('d/m');
-                echo "<span class='date' data-date='$data'>$data</span>";
+            $dias_gerados = 0;
+            
+            while ($dias_gerados < 5) {
+                // Verifica se o dia da semana é sábado (6) ou domingo (7)
+                $dia_semana = $hoje->format('N');
+            
+                if ($dia_semana < 6) { // Se for um dia útil (segunda a sexta)
+                    $data = $hoje->format('d/m');  // Formata a data
+                    echo "<span class='date' data-date='$data'>$data</span>";
+                    $dias_gerados++;  // Incrementa o contador de dias gerados
+                }
+            
+                if ($dias_gerados < 5) {  // Apenas modifica a data se ainda não gerou os 5 dias
+                    $hoje->modify('+1 day');  // Passa para o próximo dia
+                }
             }
             ?>
         </div>
