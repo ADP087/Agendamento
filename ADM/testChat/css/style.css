@@ -55,19 +55,3 @@ th,td {
 td.selected {
     background-color: red;
 }
-
-@media only screen and (max-width: 600px) {
-    section {
-        width: 100%;
-    }
-
-    table {
-        font-size: 14px;
-    }
-
-    .date {
-        font-size: 18pt;
-        padding: 15px;
-        margin: 10px;
-    }
-}

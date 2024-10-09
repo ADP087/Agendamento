@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['usuario_nome_usuario'] = $user['nome_usuario'];
 
             // Redirecionar o usuário para a página de agendamento (index.html)
-            header("Location: ../ADM/pag_adm.html");
+            header("Location: ../ADM/pag_adm.php");
             exit();
         } else {
             // Caso a senha esteja incorreta
