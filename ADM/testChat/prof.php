@@ -40,7 +40,7 @@ include 'php/db_connect.php'; // Certifique-se de que o caminho para a conexão 
             </table>
             <br>
             <input type="button" value="Voltar" onclick="history.back();">
-            <input type="button" value="Limpar" onclick="limparSelecao()">
+            
             <input type="submit" value="Confirmar" onclick="mostrarHorario()">
             <div id="horarioSelecionado"></div>
         </div>

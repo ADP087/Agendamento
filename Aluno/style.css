@@ -58,3 +58,8 @@ td.selected {
 #tabela_visul table td{
     text-align: center;
 }
+
+.ocupado {
+    background-color: red; /* Mantém o fundo vermelho para horários ocupados */
+    color: white; /* Texto em branco para contraste */
+}

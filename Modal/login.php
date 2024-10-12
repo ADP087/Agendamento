@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $senha = $_POST['senha_usuario'];
 
     // Consulta para buscar o usuário pelo email
-    $sql = "SELECT id_usuario, nome_usuario, senha_usuario FROM usuarios WHERE email_usuario = ?";
+    $sql = "SELECT id_usuario, nome_usuario, senha_usuario, tipo_usuario FROM usuarios WHERE email_usuario = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -29,15 +29,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verificar se o usuário existe no banco de dados
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
-        
+
         // Verificar se a senha está correta
         if (password_verify($senha, $user['senha_usuario'])) {
             // Armazenar os dados do usuário na sessão
             $_SESSION['usuario_id_usuario'] = $user['id_usuario'];
             $_SESSION['usuario_nome_usuario'] = $user['nome_usuario'];
+            $_SESSION['tipo_usuario'] = $user['tipo_usuario'];
 
-            // Redirecionar o usuário para a página de agendamento (index.html)
-            header("Location: ../ADM/pag_adm.html");
+            // Redirecionar o usuário para a página correta com base no tipo
+            if ($user['tipo_usuario'] == 'ADM') {
+                header("Location: ../ADM/pag_adm.php");
+            } else if ($user['tipo_usuario'] == 'Professor') {
+                header("Location: ../ADM/pag_prof.php");
+            } else {
+                // Redirecionar para uma página padrão se o tipo não for reconhecido
+                header("Location: ../default.php");
+            }
             exit();
         } else {
             // Caso a senha esteja incorreta
@@ -52,6 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->close();
     $conn->close();
 }
+
 ?>
 
 <!DOCTYPE html>

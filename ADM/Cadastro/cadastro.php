@@ -5,29 +5,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = "";
     $dbname = "db_agendamento";
 
+    // Conectar ao banco de dados
     $conn = new mysqli($servername, $username, $password, $dbname);
 
+    // Verificar conexão
     if ($conn->connect_error) {
         die("Conexão falhou: " . $conn->connect_error);
     }
 
+    // Sanitizar os dados
     $nome = $conn->real_escape_string($_POST['nome_usuario']);
     $email = $conn->real_escape_string($_POST['email_usuario']);
     $senha = password_hash($_POST['senha_usuario'], PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario) VALUES ('$nome', '$email', '$senha')";
+    // Inserir o usuário com tipo 'Professor' por padrão
+    $sql = "INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario, tipo_usuario) VALUES ('$nome', '$email', '$senha', 'Professor')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Usuário cadastrado com sucesso!";
-        header("Location: ../pag_adm.html");
+        header("Location: ../pag_adm.php");
         exit();
     } else {
         echo "Erro: " . $sql . "<br>" . $conn->error;
     }
 
+    // Fechar conexão
     $conn->close();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
