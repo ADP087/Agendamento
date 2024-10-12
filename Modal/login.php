@@ -44,8 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header("Location: ../ADM/pag_prof.php");
             } else {
                 // Redirecionar para uma página padrão se o tipo não for reconhecido
-                header("Location: ../default.php");
+                header("Location: ../index.html");
             }
+
             exit();
         } else {
             // Caso a senha esteja incorreta

@@ -49,10 +49,7 @@ $result = $conn->query($sql);
                 ?>
             </table>
             <br>
-
             <a href="testChat/index.php"><button>Deseja marcar algum horário?</button></a>
-            <br>
-            <br>
             <a href="Cadastro/cadastro.php"><button>Deseja cadastrar algum professor?</button></a>
 
         </div>
