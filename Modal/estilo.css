@@ -1,59 +1,154 @@
+/* Fundo da página */
 body {
     background-color: #17567F;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-header {
-    color: white;
-    text-align: center;
-    padding-top: 40px;
-    padding-bottom: 50px;
-    font-size: 20px;
-}
-
-section {
+/* Área dos botões */
+.area-botoes {
     background-color: white;
-    border-radius: 10px;
-    padding: 15px;
-    width: 500px;
-    margin: auto;
-    box-shadow: 3px 3px 10px black;
+    border-radius: 15px;
+    padding: 40px 20px;
+    width: 400px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
-    transition: 1s;
+    transition: transform 0.3s ease-in-out;
+    animation: fadeIn 0.6s ease-in-out;
 }
 
-#botao_02 {
-    padding-top: 40px;
-    padding-bottom: 50px;
+/* Estilo do título */
+.area-botoes h1 {
+    color: #17567F;
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
 }
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo dos botões */
 button {
     width: 250px;
-    height: 70px;
-    border-radius: 180px;
-    margin-top: 40px;
-    margin-left: px;
-    border: solid;
-    border-width: 1px;
-    border-color: #17567F;
+    height: 60px;
+    border-radius: 30px;
+    margin-top: 15px;
+    border: 2px solid #17567F;
     background-color: #17567F;
-    transition: 500ms;
     color: white;
-    font-size: large;
-    font-weight: bolder;
+    font-size: 18px;
+    font-weight: bold;
     font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
 }
 
+/* Efeito de hover no botão */
 button:hover {
     background-color: transparent;
     color: #17567F;
-    transition: 500ms ease-in-out;
+    transform: scale(1.05);
 }
 
-#start:active {
+/* Efeito de clique no botão */
+button:active {
     background-color: #17567F;
     color: white;
-    transition: 0s ease-in-out;
+    transform: scale(1);
 }
+
+
+
+/*========Parte do login==========*/
+
+/* Centraliza o formulário na tela */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Estilo do formulário */
+.area_login {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px 40px;
+    width: 400px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efeito de entrada ao carregar */
+.form-login {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo do título */
+.area_login h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo das labels */
+.label {
+    color: #555;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilo dos campos de entrada */
+.area_login input[type="email"],
+.area_login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+/* Efeito de foco nos campos de entrada */
+.area_login input[type="email"]:focus,
+.area_login input[type="password"]:focus {
+    border-color: #3b5998;
+    box-shadow: 0px 0px 5px rgba(59, 89, 152, 0.5);
+    outline: none;
+}
+
+/* Estilo do botão */
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #3b5998;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito de hover no botão */
+.btn-submit:hover {
+    background-color: #2d4373;
+}
+
