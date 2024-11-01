@@ -1,5 +1,5 @@
          // Adicionando evento de clique para as datas
-         var dates = document.querySelectorAll('.date');
+         let dates = document.querySelectorAll('.date');
          dates.forEach(function(date) {
              date.addEventListener('click', function() {
                  // Removendo a classe 'selected-date' de todas as datas
@@ -14,7 +14,7 @@
          });
          
         function marcarHorario(checkbox) {
-            var td = checkbox.parentNode;
+            let td = checkbox.parentNode;
             if (checkbox.checked) {
                 td.classList.add('selected');
             } else {
@@ -23,25 +23,25 @@
         }
 
         function limparSelecao() {
-            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            let checkboxes = document.querySelectorAll('input[type="checkbox"]');
             checkboxes.forEach(function(checkbox) {
                 checkbox.checked = false;
-                var td = checkbox.parentNode;
+                let td = checkbox.parentNode;
                 td.classList.remove('selected');
             });
-            var dates = document.querySelectorAll('.date');
+            let dates = document.querySelectorAll('.date');
             dates.forEach(function(date) {
                 date.classList.remove('selected-date');
                 date.classList.remove('darker');
             });
-            var horariosSelecionados = document.getElementById('horariosSelecionados');
+            let horariosSelecionados = document.getElementById('horariosSelecionados');
             horariosSelecionados.innerHTML = "";
         }
 
         function mostrarHorariosSelecionados() {
-            var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-            var dataSelecionada = document.querySelector('.selected-date');
-            var horariosSelecionados = document.getElementById('horariosSelecionados');
+            let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            let dataSelecionada = document.querySelector('.selected-date');
+            let horariosSelecionados = document.getElementById('horariosSelecionados');
             if (!dataSelecionada) {
                 alert("Por favor, selecione uma data.");
                 return;
@@ -50,7 +50,7 @@
                 alert("Por favor, selecione pelo menos um horário.");
                 return;
             }
-            var horarios = [];
+            let horarios = [];
             checkboxes.forEach(function(checkbox) {
                 horarios.push(checkbox.value);
             });
