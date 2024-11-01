@@ -40,21 +40,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro de Professor</title>
 </head>
 <body>
-    <h2>Cadastro de Usuário</h2>
-    <form action="cadastro.php" method="POST">
-        <label for="nome_usuario">Nome:</label><br>
-        <input type="text" id="nome_usuario" name="nome_usuario" required><br><br>
-        
-        <label for="email_usuario">Email:</label><br>
-        <input type="email" id="email_usuario" name="email_usuario" required><br><br>
-        
-        <label for="senha_usuario">Senha:</label><br>
-        <input type="password" id="senha_usuario" name="senha_usuario" required><br><br>
-        
-        <input type="submit" value="Cadastrar">
-    </form>
+    <main>
+        <section class="area-cadastro">
+            <h2>Cadastro de Professor</h2>
+            <form action="cadastro.php" method="POST">
+                <label for="nome_usuario">Nome:</label>
+                <input type="text" id="nome_usuario" name="nome_usuario" required>
+                
+                <label for="email_usuario">Email:</label>
+                <input type="email" id="email_usuario" name="email_usuario" required>
+                
+                <label for="senha_usuario">Senha:</label>
+                <input type="password" id="senha_usuario" name="senha_usuario" required>
+                
+                <input type="submit" value="Cadastrar">
+            </form>
+        </section>
+    </main>
 </body>
 </html>

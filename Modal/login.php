@@ -69,37 +69,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
     <title>Login</title>
-    <style>
-        .btn-cadastro {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .btn-cadastro:hover {
-            background-color: #0056b3;
-        }
-    </style>
 </head>
 <body>
-    <h2>Login</h2>
-    <form action="login.php" method="POST">
-        <label for="email_usuario">Email:</label><br>
-        <input type="email" id="email_usuario" name="email_usuario" required><br><br>
-        
-        <label for="senha">Senha:</label><br>
-        <input type="password" id="senha_usuario" name="senha_usuario" required><br><br>
-        
-        <input type="submit" value="Entrar">
-    </form>
-    <a href="cadastro.php" class="btn-cadastro">Cadastrar</a>
+    <div class="container">
+        <form action="login.php" method="POST" class="form-login">
+            <div class="area_login">
+                <h2>Login</h2>
+                <label for="email_usuario" class="label">Email:</label>
+                <input type="email" id="email_usuario" name="email_usuario" required><br><br>
+                
+                <label for="senha_usuario" class="label">Senha:</label>
+                <input type="password" id="senha_usuario" name="senha_usuario" required><br><br>
+                
+                <input type="submit" value="Entrar" class="btn-submit">
+            </div>
+        </form>
+    </div>
 </body>
 </html>
+
+
+
