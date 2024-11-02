@@ -76,7 +76,7 @@ table {
 }
 
 th, td {
-    border: 1px solid #ddd;
+    border: 1px solid rgb(87, 87, 87);
     padding: 15px; /* Aumenta o tamanho do padding */
     text-align: center;
     font-size: 18px; /* Aumenta o tamanho da fonte */
@@ -87,7 +87,7 @@ th {
 }
 
 .ocupado {
-    background-color: red;
+    background-color: #17567F;
     color: white;
 }
 
