@@ -1,20 +1,25 @@
+<?php
+include 'php/db_connect.php'; // Certifique-se de que o caminho para a conexão com o banco de dados esteja correto
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Agendamento de Horários</title>
 </head>
 <body>
     <header>
         <h1>Escolha o dia e o horário que deseja agendar:</h1> <br>
         <div class="dates">
-            <span class="date" data-date="25/04">25/04</span>
-            <span class="date" data-date="26/04">26/04</span>
-            <span class="date" data-date="27/04">27/04</span>
-            <span class="date" data-date="28/04">28/04</span>
-            <span class="date" data-date="29/04">29/04</span>
+            <?php
+            // Exibir os dias da semana
+            foreach ($dias_da_semana as $data) {
+                echo "<span class='date' data-date='$data'>$data</span> ";
+            }
+            ?>
         </div>
     </header>
     <section>
@@ -27,9 +32,6 @@
                     <td><input type="checkbox" value="20:00" onclick="marcaHorario(this)">20:00</td>
                 </tr>
                 <tr>
-                    <td class="intervalo">INTERVALO</td>
-                </tr>
-                <tr>
                     <td><input type="checkbox" value="21:00" onclick="marcaHorario(this)">21:00</td>
                 </tr>
                 <tr>
@@ -37,12 +39,14 @@
                 </tr>
             </table>
             <br>
-            <input type="button" value="Cancelar" onclick="limparSelecao()">
+            <input type="button" value="Voltar" onclick="history.back();">
+            <input type="button" value="Limpar" onclick="limparSelecao()">
             <input type="submit" value="Confirmar" onclick="mostrarHorario()">
             <div id="horarioSelecionado"></div>
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
+

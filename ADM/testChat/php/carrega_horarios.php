@@ -1,10 +1,6 @@
 <?php
 header('Content-Type: application/json');
-$conn = new mysqli("localhost", "root", "", "db_agendamento");
-
-if ($conn->connect_error) {
-    die(json_encode(['message' => 'Conexão falhou: ' . $conn->connect_error]));
-}
+include 'db_connect.php';
 
 $sql = "SELECT horario, status, agendado_por FROM horarios";
 $result = $conn->query($sql);
@@ -24,4 +20,3 @@ echo json_encode($horarios);
 
 $conn->close();
 ?>
-

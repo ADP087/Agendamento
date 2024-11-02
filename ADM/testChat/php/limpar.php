@@ -1,11 +1,6 @@
-
 <?php
 header('Content-Type: application/json');
-$conn = new mysqli("localhost", "root", "", "db_agendamento");
-
-if ($conn->connect_error) {
-    die(json_encode(['message' => 'Conexão falhou: ' . $conn->connect_error]));
-}
+include 'db_connect.php';
 
 $sql = "UPDATE horarios SET status = 0";
 if ($conn->query($sql) === TRUE) {

@@ -1,11 +1,7 @@
 <?php
 session_start();
 header('Content-Type: application/json');
-$conn = new mysqli("localhost", "root", "", "db_agendamento");
-
-if ($conn->connect_error) {
-    die(json_encode(['message' => 'Conexão falhou: ' . $conn->connect_error]));
-}
+include 'db_connect.php';
 
 // Verificar se o usuário está logado
 if (!isset($_SESSION['usuario_nome_usuario'])) {
