@@ -39,7 +39,9 @@
     <section id="sempre_novo">
 
         <div id="tabela">
-            <table id="tabela_horarios"></table>
+            <table id="tabela_horarios">
+                <!-- Tabela interativa aqui-->
+            </table>
         </div>
     </section>
 

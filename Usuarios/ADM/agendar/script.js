@@ -37,7 +37,6 @@ function selecionarHorario(id, horario, elemento) {
 }
 
 // Função para agendar o horário com confirmação
-// Função para agendar o horário com confirmação
 function agendarHorario() {
     if (!idHorarioSelecionado) {
         alert("Por favor, selecione um horário.");
@@ -47,7 +46,7 @@ function agendarHorario() {
     // Mostrar o balão de confirmação
     var confirmarAgendamento = confirm("Você quer agendar este horário?");
     if (!confirmarAgendamento) {
-        return; // Se o usuário cancelar, interrompe a função
+        return;
     }
 
     // Enviar a requisição AJAX para agendar o horário
@@ -65,4 +64,15 @@ function agendarHorario() {
     };
     // Enviar o id do horário selecionado para o servidor
     xhr.send("id_horario=" + idHorarioSelecionado);
+}
+
+function reiniciarTabela() {
+    fetch('../Reiniciar_Tabela/reiniciar_tabela.php', {
+        method: 'POST',
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+    })
+    .catch(error => console.error('Erro:', error));
 }

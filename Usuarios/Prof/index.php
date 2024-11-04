@@ -39,13 +39,15 @@
     <section id="sempre_novo">
 
         <div id="tabela">
-            <table id="tabela_horarios"></table>
+            <table id="tabela_horarios">
+                <!-- Tabela interativa aqui-->
+            </table>
             <br>
 
             <a href="agendar/index.php"><button>Quer agendar algum horário?</button></a>
         </div>
     </section>
 
-    <script src="../script.js"></script>
+    <script src="agendar/script.js"></script>
 </body>
 </html>
