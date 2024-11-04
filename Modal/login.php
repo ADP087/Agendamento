@@ -39,9 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Redirecionar o usuário para a página correta com base no tipo
             if ($user['tipo_usuario'] == 'ADM') {
-                header("Location: ../ADM/index.php");
+                header("Location: ../Usuarios/ADM/index.php");
             } else if ($user['tipo_usuario'] == 'Professor') {
-                header("Location: ../Prof/index.php");
+                header("Location: ../Usuarios/Prof/index.php");
             } else {
                 // Redirecionar para uma página padrão se o tipo não for reconhecido
                 header("Location: ../index.html");

@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../style.css">
     <title>Agendamento de Horários</title>
 </head>
 <body>
     <header>
-        <h1>Veja os horários disponiveis:</h1>
+        <h1>Escolha a sala, o dia e o horário que deseja agendar:</h1>
         <form id="form_sala">
             <label for="sala">Sala:</label>
             <select id="sala" name="sala" onclick='selecionarData(this)'>
@@ -42,10 +42,11 @@
             <table id="tabela_horarios"></table>
             <br>
 
-            <a href="agendar/index.php"><button>Quer agendar algum horário?</button></a>
+            <a href="../visualizar.php"><button>Voltar</button></a>
+            <input type="submit" value="Agendar" onclick="agendarHorario()">
         </div>
     </section>
 
-    <script src="agendar/script.js"></script>
+    <script src="../../script.js"></script>
 </body>
 </html>

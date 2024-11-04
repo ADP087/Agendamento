@@ -1,5 +1,5 @@
 <?php
-include '../db_connect.php';
+include '../../db_connect.php';
 session_start(); // Para acessar o id do usuário logado
 
 if (isset($_POST['id_horario'])) {

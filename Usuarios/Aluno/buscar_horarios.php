@@ -1,5 +1,5 @@
 <?php
-include 'db_connect.php';
+include '../db_connect.php';
 
 if (!isset($_POST['id_dia']) || !isset($_POST['id_sala'])) {
     echo "<tr><td colspan='3'>Por favor, selecione uma sala e um dia para ver os horários.</td></tr>";

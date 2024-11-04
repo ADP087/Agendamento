@@ -1,5 +1,5 @@
 <?php
-include '../db_connect.php';
+include '../../db_connect.php';
 
 if (!isset($_POST['id_dia']) || !isset($_POST['id_sala'])) {
     echo "Erro: id_dia ou id_sala não foram enviados.";
