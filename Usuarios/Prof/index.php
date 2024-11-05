@@ -48,6 +48,25 @@
         </div>
     </section>
 
-    <script src="agendar/script.js"></script>
+    <script>
+        function selecionarData(elemento) {
+            // Obter o id_dia e id_sala
+            var id_dia = elemento.getAttribute('data-id_dia');
+            var id_sala = document.getElementById("sala").value;
+
+            // Enviar requisição AJAX para buscar horários de acordo com a sala e o dia selecionado
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "buscar_horarios.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // Atualizar a tabela com os horários recebidos
+                    document.querySelector("#tabela_horarios").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send("id_dia=" + id_dia + "&id_sala=" + id_sala);
+        }
+    </script>
 </body>
 </html>

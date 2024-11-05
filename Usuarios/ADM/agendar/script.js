@@ -65,14 +65,3 @@ function agendarHorario() {
     // Enviar o id do horário selecionado para o servidor
     xhr.send("id_horario=" + idHorarioSelecionado);
 }
-
-function reiniciarTabela() {
-    fetch('../Reiniciar_Tabela/reiniciar_tabela.php', {
-        method: 'POST',
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert(data.message);
-    })
-    .catch(error => console.error('Erro:', error));
-}
