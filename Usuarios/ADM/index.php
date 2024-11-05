@@ -46,6 +46,7 @@
 
             <a href="agendar/index.php"><button>Quer agendar algum horário?</button></a>
             <a href="Cadastro/cadastro.php"><button>Cadastrar Professor</button></a>
+            <input type="button" value="Limpar" onclick="limparSelecao()">
         </div>
     </section>
 
@@ -67,6 +68,23 @@
                 }
             };
             xhr.send("id_dia=" + id_dia + "&id_sala=" + id_sala);
+        }
+
+        function limparSelecao() {
+            fetch('Limpar/limpar.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                carregarHorarios();
+            })
+            .catch((error) => {
+                console.error('Erro:', error);
+            });
         }
     </script>
 </body>
