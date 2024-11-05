@@ -42,7 +42,7 @@
             <table id="tabela_horarios"></table>
             <br>
 
-            <a href="../visualizar.php"><button>Voltar</button></a>
+            <a href="../index.php"><button>Voltar</button></a>
             <input type="submit" value="Agendar" onclick="agendarHorario()">
         </div>
     </section>

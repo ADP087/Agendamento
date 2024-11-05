@@ -8,6 +8,8 @@
 </head>
 <body>
     <header>
+        <a href="../../index.html"><p>Início</p></a>
+        <a href="Perfil/perfil_professor.php"><p>Perfil</p></a>
         <h1>Veja os horários disponiveis:</h1>
         <form id="form_sala">
             <label for="sala">Sala:</label>

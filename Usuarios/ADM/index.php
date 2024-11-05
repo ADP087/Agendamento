@@ -71,20 +71,23 @@
         }
 
         function limparSelecao() {
-            fetch('Limpar/limpar.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })
-            .then(response => response.json())
-            .then(data => {
-                alert(data.message);
-                carregarHorarios();
-            })
-            .catch((error) => {
-                console.error('Erro:', error);
-            });
+            // Exibe uma mensagem de confirmação
+            if (confirm("Certeza?")) {
+                fetch('Limpar/limpar.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    window.location.href = 'index.php'; // Substitua pelo caminho do arquivo desejado
+                })
+                .catch((error) => {
+                    console.error('Erro:', error);
+                });
+            }
         }
     </script>
 </body>
