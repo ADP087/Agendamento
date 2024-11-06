@@ -4,7 +4,7 @@ include("../../db_connect.php"); // Conexão com o banco de dados
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['usuario_id_usuario'])) {
-    header("Location: login.php"); // Redireciona para o login se não estiver logado
+    header("Location: ../../Modal/login.php"); // Redireciona para o login se não estiver logado
     exit();
 }
 

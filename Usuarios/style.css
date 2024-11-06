@@ -118,3 +118,63 @@ button:hover, .btn:hover {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+
+/*=====Parte do cabeçario (inicio e perfil)*/
+.inicio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inicio a {
+    text-decoration: none;
+    color: #17567F;
+    font-family: 'Arial', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.inicio a:hover {
+    background-color: #17579F;
+    color: white;
+    transform: scale(1.1);
+}
+
+.inicio a:active {
+    background-color: #00d9ff;
+}
+
+/*====Área de (Mudar Senha)=======*/
+#container_senha {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 95%;
+    max-width: 1000px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-size: 20px; /* Aumenta o tamanho da fonte */
+}
+
+/* Estilo dos campos de entrada */
+.area_senha input[type="password"] {
+    background-color: white;
+    width: 350px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+/* Efeito de foco nos campos de entrada */
+.area_senha input[type="password"]:focus {
+    border-color: #3b5998;
+    box-shadow: 0px 0px 5px rgba(59, 89, 152, 0.5);
+    outline: none;
+}
