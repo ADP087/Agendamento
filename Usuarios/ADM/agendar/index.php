@@ -14,7 +14,7 @@
             <select id="sala" name="sala" onclick='selecionarData(this)'>
                 <?php
                 for ($i = 1; $i <= 8; $i++) {
-                    echo "<option value='$i'>Sala $i</option>";
+                    echo "<option value='$i'>Laboratório $i</option>";
                 }
                 ?>  
             </select>

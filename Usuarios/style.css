@@ -76,7 +76,7 @@ table {
 }
 
 th, td {
-    border: 1px solid rgb(87, 87, 87);
+    border: 1px solid rgb(32, 32, 32);
     padding: 15px; /* Aumenta o tamanho do padding */
     text-align: center;
     font-size: 18px; /* Aumenta o tamanho da fonte */
@@ -119,6 +119,11 @@ button:hover, .btn:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/*===Botão ADM===*/
+.excluir:hover {
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    background-color: #133c5c;
+}
 
 /*=====Parte do cabeçario (inicio e perfil)*/
 .inicio {
