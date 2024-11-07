@@ -20,7 +20,7 @@
             <select id="sala" name="sala" onclick='selecionarData(this)'>
                 <?php
                 for ($i = 1; $i <= 8; $i++) {
-                    echo "<option value='$i'>Sala $i</option>";
+                    echo "<option value='$i'>Laboratório $i</option>";
                 }
                 ?>  
             </select>
@@ -93,6 +93,22 @@
                 .catch((error) => {
                     console.error('Erro:', error);
                 });
+            }
+        }
+
+        function excluirHorario(id_horario) {
+            if (confirm("Tem certeza que deseja excluir este horário?")) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "Limpar/excluir_horario.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        alert(xhr.responseText);
+                        window.location.href = 'index.php'; // Recarrega os horários
+                    }
+                };
+                xhr.send("id_horario=" + id_horario);
             }
         }
     </script>
