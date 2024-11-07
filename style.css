@@ -60,11 +60,12 @@ header{
 /* Menu de navegação */
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     background-color: var(--color-black);
     height: 9vh;
     width: 100%;
+    overflow: hidden;
 }
 
 nav .menu{
@@ -98,44 +99,8 @@ nav .menuIcon{
   transition: 0.5s ease-in-out;
 }
 
-/*Barra de pesquisa*/
-nav .search-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20%;
-    border: solid 2px var(--color-black);
-    border-radius: 13px;
-}
-
-nav .search{
-  width: 100%;
-  height: 40px;
-  border-radius: 10px 0px 0px 10px;
-  border: none;
-  padding-left: 15px;
-  outline: none;
-}
-
 nav .search:focus::placeholder{
     color: transparent;
-}
-
-nav .search-btn{
-  width: 55px;
-  height: 40px;
-  border-radius: 0px 10px 10px 0px;
-  background-color: var(--color-white);
-  color: var(--color-white);
-  display: flex;
-  border: none;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-nav .search-btn i{
-    color: var(--color-black);
 }
 
 /*Conteúdo principal*/
