@@ -36,12 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['usuario_id_usuario'] = $user['id_usuario'];
             $_SESSION['usuario_nome_usuario'] = $user['nome_usuario'];
             $_SESSION['tipo_usuario'] = $user['tipo_usuario'];
-
+            
             // Redirecionar o usuário para a página correta com base no tipo
             if ($user['tipo_usuario'] == 'ADM') {
-                header("Location: ../ADM/pag_adm.php");
+                header("Location: ../Usuarios/ADM/index.php");
             } else if ($user['tipo_usuario'] == 'Professor') {
-                header("Location: ../ADM/pag_prof.php");
+                header("Location: ../Usuarios/Prof/index.php");
             } else {
                 // Redirecionar para uma página padrão se o tipo não for reconhecido
                 header("Location: ../index.html");
@@ -50,11 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         } else {
             // Caso a senha esteja incorreta
-            echo "Senha incorreta.";
+            echo "Usuário ou senha incorreto";
         }
     } else {
         // Caso o usuário não seja encontrado no banco de dados
-        echo "Usuário não encontrado.";
+        echo "Usuário ou senha incorreto";
     }
 
     // Fechar a conexão e o statement
