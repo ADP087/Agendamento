@@ -19,7 +19,7 @@
             <label for="sala">Sala:</label>
             <select id="sala" name="sala" onclick='selecionarData(this)'>
                 <?php
-                for ($i = 1; $i <= 8; $i++) {
+                for ($i = 1; $i <= 9; $i++) {
                     echo "<option value='$i'>Laboratório $i</option>";
                 }
                 ?>  

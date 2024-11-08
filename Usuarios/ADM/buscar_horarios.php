@@ -44,6 +44,8 @@ if (isset($_POST['id_dia']) && isset($_POST['id_sala'])) {
             }
             echo "</tr>";
         }
-    }    
+    } else {
+        echo "<tr><td colspan='3'>Escolha o dia da semana para verificar horários disponíveis</td></tr>";
+    }
 }
 ?>
