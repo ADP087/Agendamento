@@ -26,42 +26,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // Verificar se o usuário existe no banco de dados
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
 
-        // Verificar se a senha está correta
         if (password_verify($senha, $user['senha_usuario'])) {
-            // Armazenar os dados do usuário na sessão
             $_SESSION['usuario_id_usuario'] = $user['id_usuario'];
             $_SESSION['usuario_nome_usuario'] = $user['nome_usuario'];
             $_SESSION['tipo_usuario'] = $user['tipo_usuario'];
-            
-            // Redirecionar o usuário para a página correta com base no tipo
+
             if ($user['tipo_usuario'] == 'ADM') {
                 header("Location: ../Usuarios/ADM/index.php");
             } else if ($user['tipo_usuario'] == 'Professor') {
                 header("Location: ../Usuarios/Prof/index.php");
             } else {
-                // Redirecionar para uma página padrão se o tipo não for reconhecido
                 header("Location: ../index.html");
             }
-
             exit();
         } else {
-            // Caso a senha esteja incorreta
-            echo "Usuário ou senha incorreto";
+            $_SESSION['error_message'] = "Usuário ou senha incorretos.";
         }
     } else {
-        // Caso o usuário não seja encontrado no banco de dados
-        echo "Usuário ou senha incorreto";
+        $_SESSION['error_message'] = "Usuário ou senha incorretos.";
     }
 
-    // Fechar a conexão e o statement
     $stmt->close();
     $conn->close();
 }
 
+// Mensagem de erro para exibir no HTML
+if (isset($_SESSION['error_message'])) {
+    $error_message = $_SESSION['error_message'];
+    unset($_SESSION['error_message']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -71,12 +67,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
     <title>Login</title>
+
+    <style>
+        /* Mensagem de erro */
+        .error-message {
+            color: #D8000C;
+            background-color: #FFBABA;
+            border: 1px solid #D8000C;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+            animation: shake 0.3s ease-in-out;
+        }
+
+        /* Animação para um efeito de shake */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+    
 </head>
 <body>
     <div class="container">
         <form action="login.php" method="POST" class="form-login">
             <div class="area_login">
                 <h2>Login</h2>
+                
+                <?php if (!empty($error_message)): ?>
+                    <div class="error-message">
+                        <?php echo $error_message; ?>
+                    </div>
+                <?php endif; ?>
+                
                 <label for="email_usuario" class="label">Email:</label>
                 <input type="email" id="email_usuario" name="email_usuario" required><br><br>
                 
@@ -89,6 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </body>
 </html>
+
 
 
 

@@ -183,3 +183,63 @@ button:hover, .btn:hover {
     box-shadow: 0px 0px 5px rgba(59, 89, 152, 0.5);
     outline: none;
 }
+
+/* Estilos para desktop (computadores grandes) */
+@media (min-width: 992px) {
+    body {
+        font-size: 18px;
+    }
+    header, #sempre_novo {
+        width: 80%;
+    }
+}
+
+/* Estilos para tablets */
+@media (min-width: 600px) and (max-width: 991px) {
+    header, #sempre_novo {
+        width: 90%;
+    }
+    .inicio {
+        flex-direction: column; /* Empilha os links do cabeçalho */
+        gap: 10px;
+    }
+    select {
+        width: 100%; /* Deixa o select ocupar toda a largura */
+    }
+    .date {
+        font-size: 20px; /* Ajusta o tamanho da fonte */
+        padding: 15px;
+        margin: 5px;
+    }
+    button, input {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+}
+
+/* Estilos para celulares */
+@media (max-width: 599px) {
+    body {
+        font-size: 16px;
+        padding: 10px;
+    }
+    header, #sempre_novo {
+        width: 100%;
+    }
+    h1 {
+        font-size: 24px; /* Ajusta o título para telas menores */
+    }
+    select, .date, button, input {
+        width: 100%;
+        font-size: 18px;
+    }
+    .date {
+        padding: 10px;
+        margin: 3px;
+    }
+    .inicio {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
