@@ -242,6 +242,7 @@ footer a{
   cursor: pointer;
 }
 
+
 /* Páginas Informações */
 
 .pag_informacao{
@@ -252,19 +253,36 @@ footer a{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100px;
 }
 
 .area_informacao {
-  background-color: white;
+  background-color: #ffffff;
+  margin: auto;
   border-radius: 15px;
   padding: 40px 20px;
-  width: 400px;
+  width: 700px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
   transition: transform 0.3s ease-in-out;
   animation: fadeIn 0.6s ease-in-out;
 }
+
+.area_informacao a {
+  color: rgb(4, 0, 253);
+}
+
+.area_informacao ul {
+  list-style-position: inside; /* Faz a bolinha ficar dentro do contêiner */
+  text-align: center;
+  padding: 0;
+}
+
+.area_informacao li {
+  text-align: left; /* Mantém o texto alinhado à esquerda */
+  margin: 5px 0; /* Espaçamento vertical entre os itens */
+}
+
 
 /* Responsividade mobile */
 
