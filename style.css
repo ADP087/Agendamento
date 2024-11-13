@@ -253,11 +253,10 @@ footer a{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
 }
 
 .area_informacao {
-  background-color: #ffffff;
+  background-color: #ecebeb;
   margin: auto;
   border-radius: 15px;
   padding: 40px 20px;
@@ -283,6 +282,27 @@ footer a{
   margin: 5px 0; /* Espaçamento vertical entre os itens */
 }
 
+/* Pag do time (é especial)*/
+
+.informacao_time {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ecebeb;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+}
+
+.foto img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
 
 /* Responsividade mobile */
 
