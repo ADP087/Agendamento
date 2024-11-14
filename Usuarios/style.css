@@ -15,7 +15,7 @@ body {
 header {
     background-color: #ffffff;
     border-radius: 15px;
-    padding: 40px;
+    padding: 20px;
     width: 95%;
     max-width: 1000px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -127,31 +127,41 @@ button:hover, .btn:hover {
 
 /*=====Parte do cabeçario (inicio e perfil)*/
 .inicio {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: fixed; /* Fixa a barra na tela */
+    top: 20px; /* Define a distância do topo */
+    left: 50%; /* Centraliza a barra horizontalmente */
+    transform: translateX(-50%); /* Ajusta para que o centro da barra fique no meio */
+    display: flex; 
+    justify-content: space-between; /* Coloca um botão em cada canto */
+    align-items: center; 
+    width: 600px;
+    height: 50px; 
+    padding: 5px 10px; /* Ajusta o padding para ocupar menos espaço */
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Garante que a barra fique sobre outros elementos */
 }
 
+/* Estilos para os botões */
 .inicio a {
+    padding: 8px 16px; /* Ajusta o padding para centralizar verticalmente */
+    background-color: #17567F;
+    color: #fff;
     text-decoration: none;
-    color: #17567F;
-    font-family: 'Arial', sans-serif;
-    font-size: 25px;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 4px;
+    font-size: 18px;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    height: 30px; 
 }
 
 .inicio a:hover {
-    background-color: #17579F;
-    color: white;
-    transform: scale(1.1);
+    background-color: #133c5c;
 }
 
-.inicio a:active {
-    background-color: #00d9ff;
-}
 
 /*====Área de (Mudar Senha)=======*/
 #container_senha {
@@ -175,6 +185,7 @@ button:hover, .btn:hover {
     border-radius: 5px;
     box-sizing: border-box;
     transition: 0.3s;
+    color: black;
 }
 
 /* Efeito de foco nos campos de entrada */

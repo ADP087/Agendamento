@@ -4,7 +4,7 @@ include("../../db_connect.php"); // Conexão com o banco de dados
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['usuario_id_usuario'])) {
-    header("Location: ../../Modal/login.php"); // Redireciona para o login se não estiver logado
+    header("Location: ../../../Modal/login.php"); // Redireciona para o login se não estiver logado
     exit();
 }
 
@@ -24,6 +24,7 @@ $stmt->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../../assets/icon.png">
     <link rel="stylesheet" href="../../style.css">
     <title>Perfil do ADM</title>
 </head>

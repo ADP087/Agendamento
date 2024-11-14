@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../../assets/icon.png">
+    <link rel="stylesheet" href="../style.css">
     <title>Agendamento de Horários</title>
 </head>
 <body>
     <header>
+        <div class="inicio">
+            <a href="../../index.html"><p>Início</p></a>
+        </div>
+
         <h1>Veja os horários disponiveis:</h1>
         <form id="form_sala">
             <label for="sala">Sala:</label>
