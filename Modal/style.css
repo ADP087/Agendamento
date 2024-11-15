@@ -152,3 +152,84 @@ button:active {
     background-color: #2d4373;
 }
 
+/* Login Responsivo */
+@media screen and (max-width: 768px) {
+    .area-botoes {
+        width: 90%; /* Ajusta a largura para telas menores */
+        padding: 30px; /* Reduz o padding */
+    }
+
+    .area-botoes h1 {
+        font-size: 24px; /* Reduz o tamanho do título */
+    }
+
+    button {
+        width: 80%; /* Reduz a largura dos botões */
+        font-size: 16px; /* Reduz o tamanho da fonte */
+        height: 50px; /* Reduz a altura */
+    }
+
+    /* Para tablets */
+    .area_login {
+        width: 90%; /* Ajusta a largura para caber melhor */
+        padding: 20px; /* Reduz o padding */
+    }
+
+    .area_login h2 {
+        font-size: 24px; /* Reduz o tamanho do título */
+    }
+
+    .area_login input[type="email"],
+    .area_login input[type="password"] {
+        padding: 8px; /* Reduz o padding dos campos */
+        font-size: 16px; /* Ajusta o tamanho do texto */
+    }
+
+    .btn-submit {
+        padding: 12px; /* Ajusta o tamanho do botão */
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .area-botoes {
+        width: 95%; /* Quase a largura total */
+        padding: 20px; /* Menor padding */
+    }
+
+    .area-botoes h1 {
+        font-size: 20px; /* Reduz o tamanho do título */
+    }
+
+    button {
+        width: 100%; /* Botões ocupam toda a largura */
+        font-size: 14px; /* Texto menor */
+        height: 45px; /* Altura ajustada */
+    }
+    /* Para celulares */
+    .area_login {
+        width: 95%; /* Largura quase cheia */
+        padding: 15px; /* Padding menor */
+    }
+
+    .area_login h2 {
+        font-size: 20px; /* Reduz ainda mais o título */
+    }
+
+    .area_login input[type="email"],
+    .area_login input[type="password"] {
+        font-size: 14px; /* Reduz o texto dos campos */
+        padding: 6px; /* Reduz o padding */
+    }
+
+    .btn-submit {
+        font-size: 14px; /* Reduz o texto do botão */
+        padding: 10px; /* Padding menor */
+    }
+
+    .error-message {
+        font-size: 14px; /* Ajusta a mensagem de erro */
+        padding: 8px; /* Reduz o padding */
+    }
+}
+
