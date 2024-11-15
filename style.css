@@ -269,12 +269,13 @@ footer a{
 
 .area_informacao a {
   color: rgb(4, 0, 253);
+  text-decoration: underline;
 }
 
 .area_informacao ul {
   list-style-position: inside; /* Faz a bolinha ficar dentro do contêiner */
-  text-align: center;
   padding: 0;
+  margin: 20px 0; /* Adiciona espaçamento entre as listas */
 }
 
 .area_informacao li {
@@ -282,8 +283,8 @@ footer a{
   margin: 5px 0; /* Espaçamento vertical entre os itens */
 }
 
-/* Pag do time (é especial)*/
 
+/* Pag do time (é especial)*/
 .informacao_time {
   display: flex;
   align-items: center;
@@ -297,11 +298,19 @@ footer a{
   font-family: Arial, sans-serif;
 }
 
+/* Ajuste para a imagem */
 .foto img {
   width: 100%;
-  max-width: 1500px;
+  max-width: 400px; /* Limita o tamanho da imagem em telas grandes */
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajuste de texto */
+.texto {
+  flex: 1;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 /* Responsividade mobile */
@@ -400,4 +409,40 @@ footer a{
     height: fit-content;
   }
 
+
+  /*======Parte Informação*/
+
+  .area_informacao {
+    width: 90%; /* Ajusta a largura para caber melhor em tablets */
+    padding: 30px; /* Reduz o espaçamento */
+  }
+
+  .area_informacao h2 {
+    font-size: 22px; /* Reduz o tamanho do título */
+  }
+
+  .area_informacao h3 {
+    font-size: 18px; /* Títulos menores */
+  }
+
+  .area_informacao ul {
+    font-size: 16px; /* Ajusta o tamanho do texto das listas */
+  }
+
+  /*=====Pag sobre o time*/
+  .informacao_time {
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: center;
+    gap: 15px; /* Reduz o espaçamento entre os elementos */
+    padding: 15px; /* Reduz o padding */
+  }
+
+  .foto img {
+    max-width: 300px; /* Ajusta a largura máxima da imagem em tablets */
+  }
+
+  .texto {
+    font-size: 16px; /* Reduz o tamanho da fonte */
+    text-align: center; /* Centraliza o texto em telas menores */
+  }
 }

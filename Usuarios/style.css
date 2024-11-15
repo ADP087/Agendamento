@@ -2,12 +2,12 @@
 body {
     background-color: #17567F;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: auto;
     flex-direction: column;
 }
 
@@ -127,35 +127,31 @@ button:hover, .btn:hover {
 
 /*=====Parte do cabeçario (inicio e perfil)*/
 .inicio {
-    position: fixed; /* Fixa a barra na tela */
-    top: 20px; /* Define a distância do topo */
-    left: 50%; /* Centraliza a barra horizontalmente */
-    transform: translateX(-50%); /* Ajusta para que o centro da barra fique no meio */
-    display: flex; 
-    justify-content: space-between; /* Coloca um botão em cada canto */
-    align-items: center; 
-    width: 600px;
-    height: 50px; 
-    padding: 5px 10px; /* Ajusta o padding para ocupar menos espaço */
+    display: flex; /* Mantém os elementos lado a lado */
+    justify-content: space-between; /* Distribui os itens uniformemente */
+    align-items: center; /* Alinha verticalmente os itens */
+    width: 100%; /* Usa toda a largura disponível */
+    padding: 5px 10px; /* Ajusta o espaçamento */
     background-color: #f0f0f0;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1000; /* Garante que a barra fique sobre outros elementos */
+    gap: 10px; /* Espaçamento entre os itens */
 }
 
 /* Estilos para os botões */
 .inicio a {
-    padding: 8px 16px; /* Ajusta o padding para centralizar verticalmente */
     background-color: #17567F;
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
-    font-size: 18px;
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-    height: 30px; 
+    flex: 1; /* Garante que os botões ocupem espaços iguais */
+    text-align: center;
+    margin: 0 5px; /* Espaçamento lateral */
+    font-size: 16px; 
+    height: auto; /* Permite que os botões ajustem a altura */
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
 }
 
 .inicio a:hover {
@@ -195,62 +191,80 @@ button:hover, .btn:hover {
     outline: none;
 }
 
-/* Estilos para desktop (computadores grandes) */
-@media (min-width: 992px) {
-    body {
-        font-size: 18px;
-    }
-    header, #sempre_novo {
-        width: 80%;
-    }
-}
 
-/* Estilos para tablets */
-@media (min-width: 600px) and (max-width: 991px) {
-    header, #sempre_novo {
-        width: 90%;
-    }
-    .inicio {
-        flex-direction: column; /* Empilha os links do cabeçalho */
-        gap: 10px;
-    }
-    select {
-        width: 100%; /* Deixa o select ocupar toda a largura */
-    }
-    .date {
-        font-size: 20px; /* Ajusta o tamanho da fonte */
+/*====Responsividade=====*/
+@media screen and (max-width: 768px) {
+    header {
+        width: 100%;
         padding: 15px;
-        margin: 5px;
+        font-size: 24px; /* Diminui o tamanho da fonte */
     }
-    button, input {
-        font-size: 18px;
-        padding: 10px 20px;
+
+    .inicio {
+        flex-wrap: nowrap; /* Garante que os itens fiquem em uma única linha */
+    }
+
+    .inicio a {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+        padding: 5px; /* Ajusta o padding */
+    }
+
+    select {
+        font-size: 20px; /* Ajusta o tamanho da fonte */
+        width: 100%; /* O select ocupará toda a largura */
+    }
+
+    .date {
+        font-size: 20px; /* Reduz o tamanho da fonte */
+        padding: 15px; /* Ajusta o espaçamento */
+    }
+
+    #sempre_novo {
+        width: 100%; /* Ocupa a largura total */
+        padding: 20px; /* Reduz o padding */
+    }
+
+    table {
+        font-size: 16px; /* Reduz o tamanho do texto */
+    }
+
+    button, .btn, input {
+        font-size: 18px; /* Diminui o tamanho da fonte */
+        padding: 10px 20px; /* Ajusta o padding */
     }
 }
 
-/* Estilos para celulares */
-@media (max-width: 599px) {
-    body {
-        font-size: 16px;
+/* Ajustes para telas muito pequenas (ex.: smartphones) */
+@media screen and (max-width: 480px) {
+    header {
+        font-size: 20px;
+    }
+
+    .inicio {
+        flex-wrap: nowrap; /* Mantém tudo em uma única linha */
+        overflow-x: auto; /* Permite rolagem horizontal se necessário */
+    }
+
+    .inicio a {
+        font-size: 12px; /* Ajusta ainda mais a fonte */
+        padding: 5px 2px; /* Reduz o espaçamento interno */
+    }
+
+    .date {
+        font-size: 18px;
         padding: 10px;
     }
-    header, #sempre_novo {
-        width: 100%;
-    }
-    h1 {
-        font-size: 24px; /* Ajusta o título para telas menores */
-    }
-    select, .date, button, input {
-        width: 100%;
+
+    select {
         font-size: 18px;
     }
-    .date {
-        padding: 10px;
-        margin: 3px;
+
+    table {
+        font-size: 14px;
     }
-    .inicio {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
+
+    button, .btn, input {
+        font-size: 16px;
+        padding: 8px 15px;
     }
 }
