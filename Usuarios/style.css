@@ -211,8 +211,6 @@ button:hover, .btn:hover {
     margin-top: 20px;
 }
 
-
-
 /*====Responsividade=====*/
 @media screen and (max-width: 768px) {
     header {
