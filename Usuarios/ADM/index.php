@@ -79,7 +79,7 @@
 
         function limparSelecao() {
             // Exibe uma mensagem de confirmação
-            if (confirm("Certeza?")) {
+            if (confirm("Certeza que quer reiniciar a tabela?")) {
                 fetch('Limpar/limpar.php', {
                     method: 'POST',
                     headers: {

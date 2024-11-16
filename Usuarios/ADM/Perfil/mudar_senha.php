@@ -8,37 +8,56 @@ if (!isset($_SESSION['usuario_id_usuario'])) {
     exit();
 }
 
+$mensagem = ""; // Variável para armazenar mensagens de feedback
+
 // Processa a mudança de senha quando o formulário é enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Verifique se os campos de senha foram preenchidos
-    if (isset($_POST['nova_senha']) && isset($_POST['confirmar_senha'])) {
+    if (isset($_POST['senha_atual'], $_POST['nova_senha'], $_POST['confirmar_senha'])) {
+        $senha_atual = $_POST['senha_atual'];
         $nova_senha = $_POST['nova_senha'];
         $confirmar_senha = $_POST['confirmar_senha'];
 
-        // Verifica se as senhas coincidem
-        if ($nova_senha === $confirmar_senha) {
+        $id_usuario = $_SESSION['usuario_id_usuario'];
+
+        // Consulta a senha atual no banco
+        $query = "SELECT senha_usuario FROM usuarios WHERE id_usuario = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("i", $id_usuario);
+        $stmt->execute();
+        $stmt->bind_result($senha_hash_atual);
+        $stmt->fetch();
+        $stmt->close();
+
+        // Verifica se a senha atual está correta
+        if (!password_verify($senha_atual, $senha_hash_atual)) {
+            $mensagem = "<p class='erro'>A senha atual está incorreta.</p>";
+        } elseif ($nova_senha !== $confirmar_senha) {
+            $mensagem = "<p class='erro'>As novas senhas não coincidem.</p>";
+        } else {
             // Hash da nova senha
-            $senha_hash = password_hash($nova_senha, PASSWORD_DEFAULT);
+            $senha_hash_nova = password_hash($nova_senha, PASSWORD_DEFAULT);
 
             // Atualiza a senha no banco de dados
-            $id_usuario = $_SESSION['usuario_id_usuario'];
             $query = "UPDATE usuarios SET senha_usuario = ? WHERE id_usuario = ?";
             $stmt = $conn->prepare($query);
-            $stmt->bind_param("si", $senha_hash, $id_usuario);
+            $stmt->bind_param("si", $senha_hash_nova, $id_usuario);
 
             if ($stmt->execute()) {
-                header("Location: perfil.php");
-                exit();
+                $mensagem = "<p class='sucesso'>Senha alterada com sucesso! Redirecionando para o perfil...</p>";
+                echo "<script>
+                        setTimeout(() => {
+                            window.location.href = 'perfil.php';
+                        }, 2000); // Redireciona após 3 segundos
+                      </script>";
             } else {
-                echo "Erro ao atualizar a senha. Tente novamente.";
+                $mensagem = "<p class='erro'>Erro ao atualizar a senha. Tente novamente.</p>";
             }
 
             $stmt->close();
-        } else {
-            echo "As senhas não coincidem. Tente novamente.";
         }
     }
 }
+
 
 $conn->close();
 ?>
@@ -58,18 +77,29 @@ $conn->close();
     </header>
 
     <div id="container_senha">
-        <form action="mudar_senha.php" method="post" >
-            <div class="area_senha">
-                <label for="nova_senha">Nova Senha:</label>
-                <input type="password" name="nova_senha" id="nova_senha" required> <br>
-                
-                <label for="confirmar_senha">Confirmar Senha:</label>
-                <input type="password" name="confirmar_senha" id="confirmar_senha" required>
-            </div>
+        
+    <!-- Exibe as mensagens -->
+    <?php if (!empty($mensagem)) echo $mensagem; ?>
+
+    <form action="mudar_senha.php" method="post">
+        <div class="area_senha">
+            <label for="senha_atual">Senha Atual:</label>
+            <input type="password" name="senha_atual" id="senha_atual" required> <br>
             
-            <button type="submit">Atualizar Senha</button>
-        </form>
+            <label for="nova_senha">Nova Senha:</label>
+            <input type="password" name="nova_senha" id="nova_senha" required> <br>
+            
+            <label for="confirmar_senha">Confirmar Nova Senha:</label>
+            <input type="password" name="confirmar_senha" id="confirmar_senha" required>
+        </div>
+        
+        <button type="submit">Atualizar Senha</button>
+    </form>
     
-        <a href="perfil.php"><button>Voltar</button></a>
+    
+
+    <a href="perfil.php"><button>Voltar</button></a>
+</div>
 </body>
 </html>
+
