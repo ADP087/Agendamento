@@ -2,18 +2,8 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "db_agendamento";
-
-    // Conectar ao banco de dados
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Verificar conexão
-    if ($conn->connect_error) {
-        die("Conexão falhou: " . $conn->connect_error);
-    }
+    // Incluir a conexão ao banco de dados
+    include '../Usuarios/db_connect.php';
 
     // Receber e sanitizar os dados enviados pelo formulário de login
     $email = $_POST['email_usuario'];
