@@ -1,7 +1,5 @@
 # Agende Educ
 
-<h1>Bem-vindo ao Agende Educ! 💻</h1>
-
 <h2>🧠 Sobre o Projeto</h2>
 <p>
   Este projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) com o
